@@ -1,0 +1,25 @@
+{
+  "name": "pintu",
+  "homepage": "https://github.com/jncz/pintu",
+  "authors": [
+    "jncz <li.j2ee@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mocha": "~2.3.3",
+    "requirejs": "~2.1.20"
+  }
+}
