@@ -1,9 +1,30 @@
-var assert = require('assert');
-describe('Array', function() {
-  describe('#indexOf()', function () {
-    it('should return -1 when the value is not present', function () {
-      assert.equal(-1, [1,2,3].indexOf(5));
-      assert.equal(-1, [1,2,3].indexOf(0));
+var assert = require("assert");
+define = require('node-requirejs-define');
+
+define.config({
+  baseUrl: __dirname,
+  paths: {
+    'cp': '../js'
+  }
+});
+
+var ResLoader = require('../js/ResLoader');
+describe('ResLoader', function() {
+  describe('load by require', function () {
+    it('should not null', function () {
+      assert.notEqual(null,ResLoader);
+    });
+  });
+});
+
+describe("ResLoad Instance",function(){
+  var loader = new ResLoader();
+  beforeEach("renew the ResLoader",function(){
+    loader = new ResLoader();
+  });  
+  describe('loadImg method', function () {
+    it('should exist', function () {
+        assert.ok(loader.loadImg);
     });
   });
 });
