@@ -11,13 +11,13 @@
 			require.config({ 
 				baseUrl: "./", 
 				paths: { 
-					"cp": "bower_components"
+					"cp": "js"
 				}, 
 				waitSeconds: 2 
 			 }); 
-			 require([], 
-				function() {
-					
+			 require(["cp/ResLoader"], 
+				function(ResLoader) {
+					console.log(new ResLoader());
 				} 
 			  ); 
 		</script>
