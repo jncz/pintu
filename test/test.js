@@ -19,11 +19,23 @@ describe("ResLoader",function(){
         assert.ok(loader.loadImg);
     });
   });
-<<<<<<< HEAD
-  describe('loadImg return ImageRes', function () {
-    it('should exist', function () {
+  describe('#loadImg', function () {
+    it('with null resource path, should return null', function () {
         var img = loader.loadImg();
-        assert.ok();
+        console.dir(img);
+        img.then(function(d){
+          assert.ok(d.length == 0);
+        });
+    });
+    
+    it('with valid resource path, should return img obj, type should be Promise', function () {
+        var path = "./imgs/img.jpg";
+        loader.init(path);
+        var img = loader.loadImg();
+        assert.ok(img);
+        img.then(function(d){
+          assert.ok(d.src);
+        });
     });
   });
 });
@@ -51,34 +63,6 @@ describe("CanvasManager",function(){
       assert.ok(m.h === 30);
     });
   });
-  
-  describe("#canvas",function(){
-    var domId = "test";
-    m.canvas(domId);
-  });
-=======
-  
-  describe('#loadImg', function () {
-    it('with null resource path, should return null', function () {
-        var img = loader.loadImg();
-        console.dir(img);
-        img.then(function(d){
-          assert.ok(d.length == 0);
-        });
-    });
-    
-    it('with valid resource path, should return img obj, type should be Promise', function () {
-        var path = "./imgs/img.jpg";
-        loader.init(path);
-        var img = loader.loadImg();
-        assert.ok(img);
-        img.then(function(d){
-          assert.ok(d.src);
-        });
-    });
-  });
-  
->>>>>>> ff4bc6febf9097c74bf4ace2ed0d949791fb2070
 });
 
 
