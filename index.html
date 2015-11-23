@@ -15,9 +15,10 @@
 				}, 
 				waitSeconds: 2 
 			 }); 
-			 require(["cp/ResLoader"], 
-				function(ResLoader) {
-					console.log(new ResLoader());
+			 require(["cp/Boot"], 
+				function(Boot) {
+					var b = new Boot();
+                    b.boot();
 				} 
 			  ); 
 		</script>

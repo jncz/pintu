@@ -20,6 +20,9 @@
   ],
   "dependencies": {
     "mocha": "~2.3.3",
-    "requirejs": "~2.1.20"
+    "requirejs": "~2.1.20",
+    "jquery": "~2.1.4",
+    "chai": "~3.4.2",
+    "should": "~7.1.1"
   }
 }
