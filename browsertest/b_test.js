@@ -1,11 +1,14 @@
-var assert = require(["../bower_components/chai/chai"]);
-var ResLoader = require(['../js/ResLoader']);
-describe('ResLoader', function() {
-  describe('load by require', function () {
+var assert = chai.assert;
+describe('Test Framework test', function() {
+  describe('assert test', function () {
     it('should not null', function () {
-      console.log(assert);
-      assert.not(ResLoader,"not null");
-      
+      assert.isNotNull("");
+    });
+    it('should be null', function () {
+      assert.isNull(null);
+    });
+    it('should be null', function () {
+      assert.ok(!$("non_existed_dom_id").id);
     });
   });
 });
