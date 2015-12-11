@@ -20,11 +20,15 @@ define([],function(){
             canvas.attr("height",prop.h);
         };
         this.canvas = function(/**String|JQ obj**/ parent,/**String*/ canvasId){
-            var d = $(parent);
+            if(parent == null){
+                parent = "body";
+            }
             canvasId = canvasId || "canvas_default";
-            if(nodeExist(d)){
+            if(nodeExist("#"+canvasId)){
+              return $("#"+canvasId);
+            }else if(nodeExist($(parent)) && !nodeExist(canvasId)){
               var canvas = createCanvasElement(canvasId);
-              d.append(canvas);
+              $(parent).append(canvas);
               this.curCanvas = canvas;
               apply(this.dimProp,this.curCanvas);
               return canvas;
