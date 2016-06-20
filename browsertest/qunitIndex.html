@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit basic example</title>
+  <link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/qunit/qunit/qunit.js"></script>
+  <script src="../bower_components/requirejs/require.js"></script>
+  <script>
+		"use strict"
+		require.config({ 
+				baseUrl: "../", 
+				paths: { 
+					"cp": "js"
+				}, 
+				waitSeconds: 2 
+		}); 
+  </script>
+  <script src="test.CanvasManager.js"></script>
+  <div id="testArea"></div>
+</body>
+</html>

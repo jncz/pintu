@@ -6,6 +6,7 @@
 		<meta name = "viewport" content = "width = device-width,initial-scale=1.0, user-scalable = yes">
 		<title>Pin Tu</title>
 		<script type="text/javascript" src="bower_components/requirejs/require.js"></script>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 		<script>
 			"use strict"
 			require.config({ 
@@ -15,10 +16,11 @@
 				}, 
 				waitSeconds: 2 
 			 }); 
-			 require(["cp/ResLoader"], 
-				function(ResLoader) {
-					console.log(new ResLoader());
-				} 
+			 require(["cp/Boot"], 
+				function(Boot) {
+					var b = new Boot();
+          b.boot();
+        } 
 			  ); 
 		</script>
 	</head>
